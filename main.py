@@ -26,7 +26,10 @@ SUSPICIOUS_LINKS = ["discordapp.com/invite", "discord.gg", "tinyurl", "bit.ly", 
 
 @bot.event
 async def on_ready():
-    print(f"🤖 Logged in as {bot.user}")
+    print(f"🤖 Logged in as {bot.user}")  
+    # Set status to Watching
+    activity = discord.Activity(type=discord.ActivityType.watching, name="Minecraft Slayer | Managing Server | 24/7")
+    await bot.change_presence(status=discord.Status.online, activity=activity)
 
 @bot.event
 async def on_message(message):
